@@ -33,11 +33,49 @@ Estas dependencias se encuentran listadas en el archivo package.json.
 - Esquemas para los datos
 - Validaciones con Expresiones Regulares
 
-### Comandos 🔍
+### Funcionalidades ✅
+
+- Obtener todos los usuarios
+- Obtener un usuario por su ID
+- Obtener todas las publicaciones
+- Publicar una foto
+- Actualizar el perfil y el avatar
+- Eliminar una publicación
+- Dar o quitar "like" a una publicación
+
+### Peticiones 📬
+
+`GET /users/id` Retorna el usuario filtrado por un id
+
+`GET /users/id` Crea un nuevo usuario y lo retorna
+
+`PATCH /users/me` Actualiza el perfil del usuario y lo retorna actualizado
+
+`PATCH /users/me/avatar` Actualiza la foto de perfil del usuario y lo retorna actualizado
+
+`GET /cards` Retorna todas las publicaciones
+
+`POST /cards` Crea una publicación y la retorna
+
+`DELETE /cards/cardId` Elimina una publicación mediante un id
+
+`PUT /cards/cardId/likes` Agrega un like a la publicación y retorna la publicación actualizada
+
+`DELETE /cards/cardId/likes` Elimina un like de la publicación y retorna la publicación actualizada
+
+### Directorios 📖
+
+`/data` — JSON files to temporarily emulate database integration. Archivos JSON temporales para simular una base de datos
+  
+`/routes` — Archivo de rutas.  
+
+`/controllers` — Archivo de controladores de response y request. 
+
+`/models` — Esquemas de los documentos de mongoDB.  
+
+### Scripts 🔍
   
 `npm run start` — para iniciar el servidor.  
   
 `npm run dev` — para iniciar el servidor con hot reload habilitado.  
-
-
 

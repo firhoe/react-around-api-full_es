@@ -45,23 +45,23 @@ Estas dependencias se encuentran listadas en el archivo package.json.
 
 ### Peticiones 📬
 
-`GET /users/id` Retorna el usuario filtrado por un id
+`GET /users/id` — Retorna el usuario filtrado por un id
 
-`GET /users/id` Crea un nuevo usuario y lo retorna
+`GET /users/id` — Crea un nuevo usuario y lo retorna
 
-`PATCH /users/me` Actualiza el perfil del usuario y lo retorna actualizado
+`PATCH /users/me` — Actualiza el perfil del usuario y lo retorna actualizado
 
-`PATCH /users/me/avatar` Actualiza la foto de perfil del usuario y lo retorna actualizado
+`PATCH /users/me/avatar` — Actualiza la foto de perfil del usuario y lo retorna actualizado
 
-`GET /cards` Retorna todas las publicaciones
+`GET /cards` — Retorna todas las publicaciones
 
-`POST /cards` Crea una publicación y la retorna
+`POST /cards` — Crea una publicación y la retorna
 
-`DELETE /cards/cardId` Elimina una publicación mediante un id
+`DELETE /cards/cardId` — Elimina una publicación mediante un id
 
-`PUT /cards/cardId/likes` Agrega un like a la publicación y retorna la publicación actualizada
+`PUT /cards/cardId/likes` — Agrega un like a la publicación y retorna la publicación actualizada
 
-`DELETE /cards/cardId/likes` Elimina un like de la publicación y retorna la publicación actualizada
+`DELETE /cards/cardId/likes` — Elimina un like de la publicación y retorna la publicación actualizada
 
 ### Directorios 📖
 

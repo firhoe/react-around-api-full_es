@@ -5,15 +5,15 @@ const { celebrate, Joi } = require("celebrate");
 const {
   getUsers,
   getUserById,
-  updateUserProfile,
-  updateUserAvatar,
+  updateProfile,
+  updateAvatar,
   getUserInfo,
 } = require("../controllers/users");
 
 router.get("/", getUsers);
 router.get('/id/:id', getUserById);
 router.get("/me", getUserInfo);
-router.patch("/me", updateUserProfile);
+router.patch("/me", updateProfile);
 router.patch("/me/avatar", celebrate({
   body: Joi.object().keys({
     avatar: Joi.string().custom((value, helpers) => {
@@ -23,7 +23,7 @@ router.patch("/me/avatar", celebrate({
       return value;
     })
   })
-}), updateUserAvatar);
+}), updateAvatar);
 
 module.exports = router;
 

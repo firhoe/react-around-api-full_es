@@ -30,7 +30,7 @@ const createUser = (req, res, next) => {
     .catch(next);
 };
 
-const updateUserProfile = (req, res, next) => {
+const updateProfile = (req, res, next) => {
   const { name, about } = req.body;
   User.findByIdAndUpdate(req.user._id, { name, about }, { new: true, })
     .ofFail()
@@ -38,7 +38,7 @@ const updateUserProfile = (req, res, next) => {
     .catch(next);
 };
 
-const updateUserAvatar = (req, res, next) => {
+const updateAvatar = (req, res, next) => {
   const { avatar } = req.body;
   User.findByIdAndUpdate(req.user._id, { avatar }, { new: true, })
     .orFail()
@@ -76,8 +76,8 @@ module.exports = {
   getUsers,
   getUserById,
   createUser,
-  updateUserProfile,
-  updateUserAvatar,
+  updateProfile,
+  updateAvatar,
   login,
   getUserInfo,
 };

@@ -1,1 +1,1 @@
-export const API_BASE_URL = 'https://api.firhoe.desarrollointerno.com';
+export const API_BASE_URL = 'http://api.firhoe.desarrollointerno.com';

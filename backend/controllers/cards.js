@@ -33,10 +33,9 @@ const deleteCard = (req, res, next) => {
 
 const putLike = (req, res, next) => {
   const { cardId } = req.params;
-  Card.findByIdAndUpdate(cardId, { $addToSet: { likes: req.user._id } },
-    {
-      new: true,
-    })
+  Card.findByIdAndUpdate(cardId, { $addToSet: { likes: req.user._id } }, {
+    new: true,
+  })
     .orFail()
     .then((card) => res.send({ data: card }))
     .catch(next);

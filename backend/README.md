@@ -15,7 +15,7 @@ El proyecto utiliza las siguientes dependencias:
 | `eslint` | `^8.38.0` | 
 | `eslint-config-airbnb-base` | `^15.0.0` |
 | `nodemon` | `^2.0.22` | 
-| `bcrypt` | `^5.1.0` | 
+| `bcryptjs` | `^2.4.3` | 
 | `celebrate` | `^15.0.1` | 
 | `cors` | `^2.8.5` | 
 | `express-winston` | `^4.2.0` | 

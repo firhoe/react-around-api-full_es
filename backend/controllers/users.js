@@ -18,13 +18,6 @@ const getUserById = (req, res, next) => {
     .catch(next);
 };
 
-const getUserInfo = (req, res, next) => {
-  const { _id } = req.user;
-  User.findById(_id)
-    .then((user) => res.send({ data: user }))
-    .catch(next);
-};
-
 const createUser = (req, res, next) => {
   const { name, about, avatar, email, password, } = req.body;
 
@@ -33,7 +26,7 @@ const createUser = (req, res, next) => {
       name, about, avatar, email, password: hash,
     })
   )
-    .then((user) => res.send({ data: user}))
+    .then((user) => res.send({ data: user }))
     .catch(next);
 };
 
@@ -72,12 +65,19 @@ const login = (req, res) => {
     });
 };
 
+const getUserInfo = (req, res, next) => {
+  const { _id } = req.user;
+  User.findById(_id)
+    .then((user) => res.send({ data: user }))
+    .catch(next);
+};
+
 module.exports = {
   getUsers,
   getUserById,
-  getUserInfo,
   createUser,
   updateUserProfile,
   updateUserAvatar,
   login,
+  getUserInfo,
 };

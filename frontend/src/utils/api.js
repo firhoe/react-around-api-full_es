@@ -161,7 +161,7 @@ class Api {
 }
 
 const api = new Api({
-  baseUrl: 'https://api.firhoe.desarrollointerno.com',
+  baseUrl: 'https://around.nomoreparties.co/v1/web_es_cohort_04',
   headers: {
     'Content-Type': 'application/json',
   },

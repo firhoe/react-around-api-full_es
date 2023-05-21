@@ -31,9 +31,11 @@ const createUser = (req, res, next) => {
 };
 
 const updateProfile = (req, res, next) => {
-  const { name, about } = req.body;
-  User.findByIdAndUpdate(req.user._id, { name, about }, { new: true, })
-    .ofFail()
+  const { name,about } = req.body;
+  User.findByIdAndUpdate(req.user._id, { name,about }, {
+    new: true,
+  })
+    .orFail()
     .then((user) => res.send({ data: user }))
     .catch(next);
 };

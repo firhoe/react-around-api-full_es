@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const { urlValidator } = require('../utils/regex');
 
 const cardsSchema = new mongoose.Schema(
   {
@@ -13,8 +12,12 @@ const cardsSchema = new mongoose.Schema(
       type: String,
       required: true,
       validate: {
-        validator: (v) => urlValidator.test(v),
-        message: 'The "link" field must be a valid URL',
+        validator(value) {
+          const urlRegex =
+            /^(http|https):\/\/(www\.)?[\w.~:/?%#[\]@!$&'()*+,;=-]+[#]?$/;
+          return urlRegex.test(value);
+        },
+        message: (props) => `${props.value} no es una URL válida`,
       },
     },
     owner: {

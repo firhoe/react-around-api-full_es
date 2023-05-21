@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 const bcrypt = require('bcryptjs');
-const { urlValidator } = require("../utils/regex");
 
 const userSchema = new mongoose.Schema(
   {
@@ -18,9 +17,14 @@ const userSchema = new mongoose.Schema(
     },
     avatar: {
       type: String,
-      default:'https://practicum-content.s3.us-west-1.amazonaws.com/resources/moved_avatar_1604080799.jpg',
+      default:
+        "https://practicum-content.s3.us-west-1.amazonaws.com/resources/moved_avatar_1604080799.jpg",
       validate: {
-        validator: (v) => urlValidator.test(v),
+        validator(value) {
+          const urlRegex =
+            /^(http|https):\/\/(www\.)?[\w.~:/?%#[\]@!$&'()*+,;=-]+[#]?$/;
+          return urlRegex.test(value);
+        },
         message: (props) => `${props.value} no es una URL válida`,
       },
     },
@@ -29,15 +33,18 @@ const userSchema = new mongoose.Schema(
       required: true,
       unique: true,
       validate: {
-        validator: (v) => urlValidator.test(v),
+        validator(value) {
+          const urlRegex = /^\S+@\S+\.\S+$/;
+          return urlRegex.test(value);
+        },
         message: (props) => `${props.value} no es un correo válido`,
-      }
+      },
     },
     password: {
       type: String,
       required: true,
       select: false,
-    }
+    },
   },
   { versionKey: false }
 );

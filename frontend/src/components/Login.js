@@ -16,10 +16,12 @@ const Login = ({handleLogin}) => {
       [name]: value,
     });
   };
+  
   const handleCloseInfoTool = () => {
     setInfoToolOpen(false);
     navigate('/signin', {state: {}});
   };
+  
   const onLogin = (e) => {
     const {password, email} = formData;
     e.preventDefault();

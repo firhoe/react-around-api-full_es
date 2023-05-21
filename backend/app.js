@@ -63,7 +63,7 @@ app.use((err, req, res, next) => {
    res.status(500).send({message: 'Se ha producido un error en el servidor'});
  });
 
-app.listen(5000, () => {
-  console.log(`Escuchando por el puerto 5000`);
+app.listen(3000, () => {
+  console.log(`Escuchando por el puerto 3000`);
 });
 

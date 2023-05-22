@@ -12,7 +12,7 @@ const EditAvatarPopup = ({ isOpen, onClose, onUpdateAvatar, handleExternalClick}
         avatar: imageRef.current.value,
       });
       e.target.reset();
-//    onClose();
+      onClose();
     }
 
     return (

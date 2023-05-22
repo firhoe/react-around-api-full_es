@@ -22,7 +22,7 @@ const EditProfilePopup = ({
   const handleSubmit = (evt) => {
     evt.preventDefault();
     onUpdateUser({name, about: description});
-//    onClose();
+    onClose();
   }
 
   const handleNameChange = (evt) => {

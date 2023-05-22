@@ -5,7 +5,7 @@ const DeletePopup = ({ isOpen, onClose, selectedCard, onCardDelete, handleExtern
   const handleSubmit = (e) => {
     e.preventDefault();
     onCardDelete(selectedCard._id);
-//  onClose();
+    onClose();
   }
   return (
     <PopupWithForm

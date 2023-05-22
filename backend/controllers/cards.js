@@ -9,7 +9,7 @@ const getCards = (req, res, next) => {
 
 const postCard = (req, res, next) => {
   const { name, link } = req.body;
-
+  
   Card.create({ name, link, owner: req.user._id })
     .then((card) => res.send({ data: card }))
     .catch(next);

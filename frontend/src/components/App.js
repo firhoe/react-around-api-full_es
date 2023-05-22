@@ -167,9 +167,11 @@ function App() {
   }, [token]);
 
   React.useEffect(() => {
-    api.getInitialCards(token).then((data) => {
-      setCards(data.data);
-    });
+   if (token) {
+     api.getInitialCards(token).then((data) => {
+       setCards(data.data);
+     });
+   }
   }, [token]);
 
   return (

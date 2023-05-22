@@ -32,5 +32,5 @@ Este repositorio toma lo último realizado en React utilizando Create React App 
 ### Acceso a la Aplicación
 
 La aplicación se encuentra disponible en las siguientes URL:
-* Frontend: 
-* Backend: 
+* Frontend: https://firhoe.desarrollointerno.com/
+* Backend: https://api.firhoe.desarrollointerno.com/

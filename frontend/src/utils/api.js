@@ -1,5 +1,3 @@
-import {API_BASE_URL} from './config';
-
 class Api {
   constructor({baseUrl, headers}) {
     this._baseUrl = baseUrl;
@@ -163,7 +161,7 @@ class Api {
 }
 
 const api = new Api({
-  baseUrl: API_BASE_URL,
+  baseUrl: 'https://api.firhoe.desarrollointerno.com',
   headers: {
     'Content-Type': 'application/json',
   },

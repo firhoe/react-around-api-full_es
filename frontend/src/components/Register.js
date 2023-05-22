@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import * as auth from '../utils/auth';
-import {Link, useNavigate} from 'react-router-dom';
+import {Link, useNavigate } from 'react-router-dom';
 import InfoTooltip from './InfoTooltip';
 
 const Register = () => {

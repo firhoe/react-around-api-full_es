@@ -1,3 +1,5 @@
+import { API_BASE_URL } from "./config";
+
 class Api {
   constructor({baseUrl, headers}) {
     this._baseUrl = baseUrl;
@@ -6,9 +8,9 @@ class Api {
 
   async getInitialCards(token) {
     try {
-      const response = await fetch(`${this.baseUrl}/cards`, {
+      const response = await fetch(`${this._baseUrl}/cards`, {
         headers: {
-          ...this.headers,
+          ...this._headers,
           authorization: `Bearer ${token}`,
         },
       });
@@ -24,9 +26,9 @@ class Api {
 
   async getUserInfo(token) {
     try {
-      const response = await fetch(`${this.baseUrl}/users/me`, {
+      const response = await fetch(`${this._baseUrl}/users/me`, {
         headers: {
-          ...this.headers,
+          ...this._headers,
           authorization: `Bearer ${token}`,
         },
       });
@@ -43,10 +45,10 @@ class Api {
   async editProfile(body, token) {
     const {name, about} = body;
     try {
-      const response = await fetch(`${this.baseUrl}/users/me`, {
+      const response = await fetch(`${this._baseUrl}/users/me`, {
         method: 'PATCH',
         headers: {
-          ...this.headers,
+          ...this._headers,
           authorization: `Bearer ${token}`,
         },
         body: JSON.stringify({
@@ -66,10 +68,10 @@ class Api {
 
   async editAvatar(link, token) {
     try {
-      const response = await fetch(`${this.baseUrl}/users/me/avatar`, {
+      const response = await fetch(`${this._baseUrl}/users/me/avatar`, {
         method: 'PATCH',
         headers: {
-          ...this.headers,
+          ...this._headers,
           authorization: `Bearer ${token}`,
         },
         body: JSON.stringify({
@@ -90,18 +92,18 @@ class Api {
     try {
       let response;
       if (isLiked) {
-        response = await fetch(`${this.baseUrl}/cards/likes/${cardId}`, {
+        response = await fetch(`${this._baseUrl}/cards/likes/${cardId}`, {
           method: 'DELETE',
           headers: {
-            ...this.headers,
+            ...this._headers,
             authorization: `Bearer ${token}`,
           },
         });
       } else {
-        response = await fetch(`${this.baseUrl}/cards/likes/${cardId}`, {
+        response = await fetch(`${this._baseUrl}/cards/likes/${cardId}`, {
           method: 'PUT',
           headers: {
-            ...this.headers,
+            ...this._headers,
             authorization: `Bearer ${token}`,
           },
         });
@@ -117,16 +119,16 @@ class Api {
   }
 
   async postCard(body, token) {
-    const {title, link} = body;
+    const {name, link} = body;
     try {
-      const response = await fetch(`${this.baseUrl}/cards`, {
+      const response = await fetch(`${this._baseUrl}/cards`, {
         method: 'POST',
         headers: {
-          ...this.headers,
+          ...this._headers,
           authorization: `Bearer ${token}`,
         },
         body: JSON.stringify({
-          name: title,
+          name: name,
           link: link,
         }),
       });
@@ -142,10 +144,10 @@ class Api {
 
   async deleteCard(cardId, onDeleteCard, token) {
     try {
-      const response = await fetch(`${this.baseUrl}/cards/${cardId}`, {
+      const response = await fetch(`${this._baseUrl}/cards/${cardId}`, {
         method: 'DELETE',
         headers: {
-          ...this.headers,
+          ...this._headers,
           authorization: `Bearer ${token}`,
         },
       });
@@ -161,7 +163,7 @@ class Api {
 }
 
 const api = new Api({
-  baseUrl: 'https://api.firhoe.desarrollointerno.com',
+  baseUrl: API_BASE_URL,
   headers: {
     'Content-Type': 'application/json',
   },

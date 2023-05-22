@@ -8,9 +8,7 @@ const EditAvatarPopup = ({ isOpen, onClose, onUpdateAvatar, handleExternalClick}
 
     const handleSubmit = (e) => {
       e.preventDefault();
-      onUpdateAvatar({
-        avatar: imageRef.current.value,
-      });
+      onUpdateAvatar(imageRef.current.value,);
       e.target.reset();
       onClose();
     }

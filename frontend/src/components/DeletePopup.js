@@ -1,17 +1,17 @@
 import React from 'react';
 import PopupWithForm from './PopupWithForm';
 
-const DeletePopup = ({ isOpen, onClose, selectedCard, onCardDelete, handleExternalClick }) => {
+const DeletePopup = ({ isOpen, onClose, card, onCardDelete, handleExternalClick }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
-    onCardDelete(selectedCard._id);
+    onCardDelete(card._id);
     onClose();
   }
   return (
     <PopupWithForm
       name="delete_card"
       title="¿Estás seguro?"
-      card={selectedCard}
+      card={card}
       isOpen={isOpen}
       onClose={onClose}
       onSubmit={handleSubmit}

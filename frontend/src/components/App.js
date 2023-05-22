@@ -101,8 +101,8 @@ function App() {
       );
   };
 
-  const handleAddPlaceSubmit = ({name, link}) => {
-    api.postCard({name, link}, token).then((newCard) => {
+  const handleAddPlaceSubmit = ({ title, link }) => {
+    api.postCard({ title, link }, token).then((newCard) => {
       setCards([...cards, newCard.data]);
     });
   };

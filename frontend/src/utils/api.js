@@ -119,7 +119,7 @@ class Api {
   }
 
   async postCard(body, token) {
-    const {name, link} = body;
+    const { title, link } = body;
     try {
       const response = await fetch(`${this._baseUrl}/cards`, {
         method: 'POST',
@@ -128,7 +128,7 @@ class Api {
           authorization: `Bearer ${token}`,
         },
         body: JSON.stringify({
-          name: name,
+          name: title,
           link: link,
         }),
       });

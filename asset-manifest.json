@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.54f4a54e.css",
+    "main.js": "/static/js/main.5d6b7834.js",
+    "static/media/denied.jpg": "/static/media/denied.ed31265cd720ccd0103b.jpg",
+    "static/media/logo.svg": "/static/media/logo.564af492f4be9b1186b759c10a73f4c8.svg",
+    "index.html": "/index.html",
+    "static/media/trash-icon.svg": "/static/media/trash-icon.ba43124316072f7a8629.svg",
+    "static/media/blackheart-icon.svg": "/static/media/blackheart-icon.f8482d28867cec189b08.svg",
+    "static/media/heart-icon.svg": "/static/media/heart-icon.70d54dffd264e73649ba.svg",
+    "static/media/toggle-menu.svg": "/static/media/toggle-menu.ccf7020248ca1ffd1496842227f6c3c8.svg",
+    "static/media/close-icon.svg": "/static/media/close-icon.471c81f48689bda2abab.svg",
+    "static/media/pencil-vector.svg": "/static/media/pencil-vector.ae1a976ddb506239e9f0.svg",
+    "static/media/edit-icon.svg": "/static/media/edit-icon.dd0216e57795a77daa67.svg",
+    "static/media/add-icon.svg": "/static/media/add-icon.bed8c136e13907f5eefb86d62a5fe29e.svg",
+    "main.54f4a54e.css.map": "/static/css/main.54f4a54e.css.map",
+    "main.5d6b7834.js.map": "/static/js/main.5d6b7834.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.54f4a54e.css",
+    "static/js/main.5d6b7834.js"
+  ]
+}
